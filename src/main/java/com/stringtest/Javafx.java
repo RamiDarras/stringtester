@@ -1,9 +1,13 @@
 package com.stringtest;
 
 import javafx.application.Application;
+import javafx.*;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.sql.*;
 import java.util.*;
@@ -56,6 +60,42 @@ public class Javafx extends Application {
             System.out.println(e);
         }
 
+        TextField textBoxCarName = new TextField();
+        textBoxCarName.setPromptText("Enter car name");
+        
+        TextField textBoxCarIds = new TextField();
+        textBoxCarIds.setPromptText("Enter car ID");
+        
+        TextField textBoxCarMotorModels = new TextField();
+        textBoxCarMotorModels.setPromptText("Enter car motor model");
+        
+        TextField textBoxCarPrices = new TextField();
+        textBoxCarPrices.setPromptText("Enter car price");
+        
+        TextField textBoxSsn = new TextField();
+        textBoxSsn.setPromptText("Enter SSN");
+        
+        TextField textBoxFirstName = new TextField();
+        textBoxFirstName.setPromptText("Enter first name");
+        
+        VBox root = new VBox();
+        root.getChildren().addAll(
+            new Label("Enter car ID: "), textBoxCarIds,
+            new Label("Enter car name: "), textBoxCarName, 
+            new Label("Enter car motor model: "), textBoxCarMotorModels,
+           new Label("Enter car price: "),textBoxCarPrices, 
+        new Label("Enter SSN: "),textBoxSsn, 
+        new Label("Enter First Name: "), textBoxFirstName
+        );
+        Button button = new Button("Submit");
+        button.setOnAction(e -> {
+           
+        });
+        
+        Scene scene = new Scene(root, 640, 480);
+        stage.setScene(scene);
+        stage.show();
+        
     }
 
     public static void main(String[] args) {
